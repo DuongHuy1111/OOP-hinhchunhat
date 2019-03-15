@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hinh Chu Nhat</title>
+</head>
+<body>
+    <canvas id="myCanvas" height="500px" width="800px" style="border:2px solid #000000;"></canvas>
+    <script>
+        function MyRectangle(height, width) {
+            this.height = height;
+            this.width = width;
+
+            this.getDientich = function () {
+                return height * width;
+            };
+
+            this.getChuvi = function () {
+                return (height + width) * 2;
+            };
+
+            this.getHeight = function () {
+                return this.height;
+            };
+
+            this.getWidth = function () {
+                return this.width;
+            };
+
+            this.setHeight = function (height) {
+                this.height = height;
+            };
+            this.setWidth = function (width) {
+                this.width = width;
+            };
+
+        };
+        function Verectangle() {
+            let rectangle = new MyRectangle(200, 300);
+            let cv = rectangle.getChuvi();
+            let dt = rectangle.getDientich();
+            let canvas = document.getElementById("myCanvas").getContext('2d');
+            canvas.rect(200, 100, rectangle.height, rectangle.width);
+            canvas.stroke();
+            document.write("Chu vi: " + cv + " Dien tich: " + dt);
+
+        }
+
+        Verectangle();
+    </script>
+</body>
+</html>
